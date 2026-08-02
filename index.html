@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Actus — Hygie CrossFit Seclin</title>
+  <meta name="description" content="Toutes les infos du box qui ne doivent pas se perdre : tutos de l'appli, cycles de programmation, challenges et vie du box.">
+  <meta name="theme-color" content="#0a0a0a">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <a class="brand" href="./">
+      <img src="assets/logo.svg" alt="Logo Hygie CrossFit">
+      <span class="brand-name">Actus <span>Hygie</span></span>
+    </a>
+    <a class="lien-site" href="https://www.crossfit-hygie.fr">← Le site du box</a>
+  </header>
+
+  <section class="hero">
+    <h1>L'info qui ne <em>se perd pas</em></h1>
+    <p>Tutos de l'appli, explication des cycles, challenges, vie du box :
+       tout ce qu'on annonce sur WhatsApp reste ici, accessible à tout moment.</p>
+  </section>
+
+  <div class="wrap">
+
+    <a class="epingle" href="bien-demarrer.html">
+      <span class="picto">🚀</span>
+      <span>
+        <strong>Bien démarrer chez Hygie</strong>
+        <small>Nouveau membre ? L'appli, les réservations, le fonctionnement des cours — tout est là.</small>
+      </span>
+      <span class="fleche">→</span>
+    </a>
+
+    <nav aria-label="Filtres par rubrique">
+      <ul class="filtres" id="filtres"></ul>
+    </nav>
+
+    <main>
+      <section class="liste" id="liste" aria-live="polite" aria-label="Liste des articles"></section>
+    </main>
+  </div>
+
+  <footer class="site-footer">
+    <p><a href="https://www.crossfit-hygie.fr">Hygie CrossFit</a> — Seclin · Box affiliée CrossFit&reg;</p>
+  </footer>
+
+  <script src="articles.js"></script>
+  <script>
+    (function () {
+      "use strict";
+
+      var RUBRIQUES = ["Tutos appli", "Prog & cycles", "Challenges", "Vie du box"];
+      var active = null; // null = tout
+
+      var listeEl = document.getElementById("liste");
+      var filtresEl = document.getElementById("filtres");
+
+      var formatFR = new Intl.DateTimeFormat("fr-FR", { day: "numeric", month: "long", year: "numeric" });
+      function dateLisible(iso) { return formatFR.format(new Date(iso + "T12:00:00")); }
+
+      var articles = ARTICLES.slice().sort(function (a, b) {
+        return b.date.localeCompare(a.date);
+      });
+
+      function construireFiltres() {
+        filtresEl.innerHTML = "";
+        var tout = ["Tout"].concat(RUBRIQUES);
+        tout.forEach(function (nom) {
+          var li = document.createElement("li");
+          var btn = document.createElement("button");
+          btn.textContent = nom;
+          var valeur = nom === "Tout" ? null : nom;
+          if (valeur === active) btn.className = "actif";
+          if (valeur === null && active === null) btn.className = "actif";
+          btn.addEventListener("click", function () {
+            active = valeur;
+            construireFiltres();
+            afficher();
+          });
+          li.appendChild(btn);
+          filtresEl.appendChild(li);
+        });
+      }
+
+      function afficher() {
+        listeEl.innerHTML = "";
+        var visibles = articles.filter(function (a) {
+          return active === null || a.rubrique === active;
+        });
+
+        if (!visibles.length) {
+          var p = document.createElement("p");
+          p.className = "vide";
+          p.textContent = "Rien dans cette rubrique pour le moment — ça arrive bientôt !";
+          listeEl.appendChild(p);
+          return;
+        }
+
+        visibles.forEach(function (a) {
+          var carte = document.createElement("a");
+          carte.className = "carte";
+          carte.href = a.url;
+
+          var meta = document.createElement("div");
+          meta.className = "carte-meta";
+          var chip = document.createElement("span");
+          chip.className = "chip";
+          chip.textContent = a.rubrique;
+          var date = document.createElement("span");
+          date.textContent = dateLisible(a.date);
+          meta.appendChild(chip);
+          meta.appendChild(date);
+
+          var h2 = document.createElement("h2");
+          h2.textContent = a.titre;
+
+          var resume = document.createElement("p");
+          resume.textContent = a.resume;
+
+          carte.appendChild(meta);
+          carte.appendChild(h2);
+          carte.appendChild(resume);
+          listeEl.appendChild(carte);
+        });
+      }
+
+      construireFiltres();
+      afficher();
+    })();
+  </script>
+</body>
+</html>
