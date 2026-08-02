@@ -10,6 +10,14 @@
 
 const ARTICLES = [
   {
+    "id": "lexique-crossfit",
+    "titre": "Décode le tableau : le lexique CrossFit",
+    "rubrique": "Vie de la box",
+    "date": "2026-08-02",
+    "resume": "AMRAP, EMOM, RX, PR… le petit lexique pour comprendre tout ce qui est écrit au tableau et parler CrossFit comme un pro.",
+    "url": "articles/lexique-crossfit.html"
+  },
+  {
     "id": "bien-demarrer-chez-hygie",
     "titre": "Bien démarrer chez Hygie",
     "rubrique": "Vie de la box",
