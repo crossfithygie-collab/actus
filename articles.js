@@ -12,6 +12,14 @@
 
 const ARTICLES = [
   {
+    "id": "des-mains-en-acier-pour-ta-gym",
+    "titre": "Des mains en acier pour débloquer ta gym",
+    "rubrique": "Conseils",
+    "date": "2026-08-02",
+    "resume": "Tractions, toes-to-bar, muscle-ups : c'est souvent le grip qui lâche en premier. Trois exercices simples pour construire une prise solide.",
+    "url": "articles/des-mains-en-acier-pour-ta-gym.html"
+  },
+  {
     "id": "lexique-crossfit",
     "titre": "Décode le tableau : le lexique CrossFit",
     "rubrique": "Vie de la box",
