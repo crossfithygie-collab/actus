@@ -1,5 +1,5 @@
 /* ============================================================
-   articles.js — SOURCE DE VÉRITÉ du blog Actus Hygie.
+   articles.js : SOURCE DE VÉRITÉ du blog Actus Hygie.
    Ajouter un article = ajouter un objet ici (en premier)
    + créer le fichier HTML correspondant dans /articles/.
    Rubriques valides : "Tutos appli", "Prog & cycles",

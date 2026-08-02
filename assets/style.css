@@ -1,5 +1,5 @@
 /* ============================================================
-   Actus Hygie CrossFit — feuille de style commune
+   Actus Hygie CrossFit : feuille de style commune
    Mise en page calquée sur crossfit-hygie.fr :
    fond clair texturé, titres Bebas noirs centrés + mots-clés
    rouges, bandeau rouge à découpe diagonale, footer noir.
@@ -333,7 +333,7 @@ body {
 
 .contenu .encadre p:last-child { margin-bottom: 0; }
 
-/* Bouton d'action — même style que les CTA du site */
+/* Bouton d'action, même style que les CTA du site */
 .bouton {
   display: inline-block;
   font-family: var(--titre);
