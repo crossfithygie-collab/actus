@@ -350,6 +350,9 @@ body {
 
 .bouton:hover { background: var(--rouge-fonce); }
 
+/* le lien-bouton reste blanc même dans .contenu (sinon écrasé par .contenu a) */
+.contenu a.bouton { color: #fff; }
+
 /* ---------- Pied de page noir (comme le site) ---------- */
 
 .site-footer {
