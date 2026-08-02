@@ -2,8 +2,10 @@
    articles.js : SOURCE DE VÉRITÉ du blog Actus Hygie.
    Ajouter un article = ajouter un objet ici (en premier)
    + créer le fichier HTML correspondant dans /articles/.
-   Rubriques valides : "Tutos appli", "Prog & cycles",
-   "Challenges", "Vie de la box".
+   Rubriques : libres, les filtres de l'accueil se construisent
+   automatiquement à partir des rubriques présentes ici.
+   RÈGLE : réutiliser une rubrique existante en priorité ;
+   toute NOUVELLE rubrique doit être validée par Jeremy avant.
    "epingle": true = affiché en tête de liste, avant les
    articles triés par date (du plus récent au plus ancien).
    ============================================================ */

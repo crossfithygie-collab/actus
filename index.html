@@ -54,7 +54,14 @@
     (function () {
       "use strict";
 
-      var RUBRIQUES = ["Tutos appli", "Prog & cycles", "Challenges", "Vie de la box"];
+      /* Les rubriques se déduisent des articles publiés : une rubrique
+         apparaît avec son premier article et disparaît avec le dernier. */
+      var RUBRIQUES = [];
+      ARTICLES.forEach(function (a) {
+        if (RUBRIQUES.indexOf(a.rubrique) === -1) RUBRIQUES.push(a.rubrique);
+      });
+      RUBRIQUES.sort(function (a, b) { return a.localeCompare(b, "fr"); });
+
       var active = null; // null = tout
 
       var listeEl = document.getElementById("liste");
