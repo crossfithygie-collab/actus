@@ -26,17 +26,6 @@
        tout ce qu'on annonce sur WhatsApp reste ici, accessible à tout moment.</p>
   </section>
 
-  <section class="bandeau">
-    <a class="bandeau-int" href="bien-demarrer.html">
-      <span class="picto">🚀</span>
-      <span>
-        <strong>Bien démarrer chez Hygie</strong>
-        <small>Nouveau membre ? L'appli, les réservations, le fonctionnement des cours : tout est là.</small>
-      </span>
-      <span class="fleche">→</span>
-    </a>
-  </section>
-
   <div class="wrap">
     <h2 class="section-titre">Les <em>actus</em></h2>
 
@@ -53,7 +42,7 @@
     <img src="assets/logo.svg" alt="Logo Hygie CrossFit">
     <ul class="footer-nav">
       <li><a href="./">Les actus</a></li>
-      <li><a href="bien-demarrer.html">Bien démarrer</a></li>
+      <li><a href="articles/bien-demarrer-chez-hygie.html">Bien démarrer</a></li>
       <li><a href="https://www.crossfit-hygie.fr">Le site de la box</a></li>
       <li><a href="https://www.crossfit-hygie.fr/#planning">Planning</a></li>
     </ul>
@@ -74,7 +63,12 @@
       var formatFR = new Intl.DateTimeFormat("fr-FR", { day: "numeric", month: "long", year: "numeric" });
       function dateLisible(iso) { return formatFR.format(new Date(iso + "T12:00:00")); }
 
+      /* Épinglés d'abord (dans l'ordre d'articles.js), puis les
+         autres par date, du plus récent au plus ancien */
       var articles = ARTICLES.slice().sort(function (a, b) {
+        var pa = a.epingle ? 1 : 0, pb = b.epingle ? 1 : 0;
+        if (pa !== pb) return pb - pa;
+        if (pa && pb) return 0;
         return b.date.localeCompare(a.date);
       });
 
@@ -126,6 +120,11 @@
           date.textContent = dateLisible(a.date);
           meta.appendChild(chip);
           meta.appendChild(date);
+          if (a.epingle) {
+            var pin = document.createElement("span");
+            pin.textContent = "📌 Épinglé";
+            meta.appendChild(pin);
+          }
 
           var h2 = document.createElement("h2");
           h2.textContent = a.titre;
