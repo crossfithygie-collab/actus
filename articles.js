@@ -16,7 +16,7 @@ const ARTICLES = [
     "titre": "Le challenge d'août : Bench Press",
     "rubrique": "Challenges",
     "date": "2026-08-03",
-    "resume": "2 minutes pour un max de reps au bench press. Test lundi 3 août, re-test la semaine du 24 : un mois pour progresser.",
+    "resume": "Le challenge est lancé : 2 minutes pour un max de reps au bench press, et re-test la semaine du 24 août pour mesurer ta progression.",
     "url": "articles/challenge-aout-bench-press.html"
   },
   {
