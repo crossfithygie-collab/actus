@@ -12,6 +12,14 @@
 
 const ARTICLES = [
   {
+    "id": "cycle-aout-force",
+    "titre": "Le cycle d'août : plus fort semaine après semaine",
+    "rubrique": "Prog & cycles",
+    "date": "2026-08-03",
+    "resume": "8 semaines de force autour du front squat et du push press : références cette semaine, re-test en semaine 8. On t'explique tout.",
+    "url": "articles/cycle-aout-force.html"
+  },
+  {
     "id": "challenge-aout-bench-press",
     "titre": "Le challenge d'août : Bench Press",
     "rubrique": "Challenges",
