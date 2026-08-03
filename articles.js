@@ -12,6 +12,14 @@
 
 const ARTICLES = [
   {
+    "id": "strivee-mode-demploi",
+    "titre": "Strivee : le mode d'emploi",
+    "rubrique": "Tutos appli",
+    "date": "2026-08-03",
+    "resume": "S'inscrire, rejoindre la box, noter tes scores et tes PRs, le calculateur de barre, le Fit Level : le guide en images.",
+    "url": "articles/strivee-mode-demploi.html"
+  },
+  {
     "id": "des-mains-en-acier-pour-ta-gym",
     "titre": "Des mains en acier pour débloquer ta gym",
     "rubrique": "Conseils",
