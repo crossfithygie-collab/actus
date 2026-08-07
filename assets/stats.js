@@ -20,6 +20,7 @@
     var h = a.href;
 
     if (h.indexOf("Hygieborne/reserver") !== -1) compter("clic-reserver");
+    else if (h.indexOf("train.strivee.app") !== -1) compter("clic-programmes");
     else if (h.indexOf("wa.me") !== -1 || h.indexOf("chat.whatsapp.com") !== -1) compter("clic-whatsapp");
     else if (h.indexOf("calendly.com") !== -1) compter("clic-seance-essai");
     else if (h.indexOf("apps.apple.com") !== -1 || h.indexOf("play.google.com") !== -1) compter("clic-strivee-store");

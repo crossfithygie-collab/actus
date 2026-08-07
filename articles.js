@@ -12,6 +12,14 @@
 
 const ARTICLES = [
   {
+    "id": "7-programmes-skills",
+    "titre": "7 programmes gratuits pour débloquer tes skills",
+    "rubrique": "Conseils",
+    "date": "2026-08-07",
+    "resume": "Muscle up, chest to bar, HSPU, double under… 3 séances par semaine pendant tes créneaux Free pour débloquer le mouvement qui te résiste.",
+    "url": "articles/7-programmes-skills.html"
+  },
+  {
     "id": "cycle-aout-force",
     "titre": "Le cycle d'août : plus fort semaine après semaine",
     "rubrique": "Prog & cycles",
