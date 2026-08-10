@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/style.css?v=7">
+  <link rel="stylesheet" href="assets/style.css?v=8">
 </head>
 <body>
 
@@ -18,6 +18,9 @@
     <a class="brand" href="./">
       <img src="assets/logo.svg" alt="Logo Hygie CrossFit">
     </a>
+    <nav aria-label="Rubriques">
+      <ul class="menu-rubriques" id="filtres"></ul>
+    </nav>
   </header>
 
   <section class="hero">
@@ -27,10 +30,6 @@
 
   <div class="wrap">
     <h2 class="section-titre">Les <em>actus</em></h2>
-
-    <nav aria-label="Filtres par rubrique">
-      <ul class="filtres" id="filtres"></ul>
-    </nav>
 
     <main>
       <section class="liste" id="liste" aria-live="polite" aria-label="Liste des articles"></section>
@@ -60,7 +59,11 @@
       });
       RUBRIQUES.sort(function (a, b) { return a.localeCompare(b, "fr"); });
 
+      /* Filtre présélectionnable par l'URL : /?r=Challenges
+         (utilisé par le menu du bandeau sur les pages d'articles) */
       var active = null; // null = tout
+      var param = new URLSearchParams(window.location.search).get("r");
+      if (param && RUBRIQUES.indexOf(param) !== -1) active = param;
 
       var listeEl = document.getElementById("liste");
       var filtresEl = document.getElementById("filtres");

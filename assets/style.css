@@ -44,6 +44,44 @@ body {
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+}
+
+/* Menu des rubriques dans le bandeau : ce sont des filtres */
+.menu-rubriques {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 20px;
+  margin-left: auto;
+  justify-content: flex-end;
+}
+
+.menu-rubriques button,
+.menu-rubriques a {
+  font-family: var(--titre);
+  font-size: 17px;
+  letter-spacing: .07em;
+  color: #fff;
+  background: none;
+  border: none;
+  padding: 2px 0;
+  cursor: pointer;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+}
+
+.menu-rubriques button:hover,
+.menu-rubriques a:hover { color: var(--rouge-clair); }
+
+.menu-rubriques button.actif {
+  color: var(--rouge-clair);
+  border-bottom-color: var(--rouge-clair);
+}
+
+@media (max-width: 700px) {
+  .menu-rubriques { margin-left: 0; justify-content: flex-start; }
 }
 
 .brand { display: flex; align-items: center; gap: 14px; text-decoration: none; }
