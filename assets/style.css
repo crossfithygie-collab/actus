@@ -259,14 +259,17 @@ body {
 .article-page { max-width: 760px; margin: 0 auto; padding: 46px 20px 80px; }
 
 .retour {
+  display: inline-block;
   font-family: var(--titre);
   font-size: 17px;
   letter-spacing: .07em;
-  color: var(--texte-3);
+  color: #fff;
+  background: #111;
+  padding: 10px 20px 7px;
   text-decoration: none;
 }
 
-.retour:hover { color: var(--noir); }
+.retour:hover { background: var(--rouge); color: #fff; }
 
 .article-page > header { text-align: center; margin: 30px 0 38px; }
 
