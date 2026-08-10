@@ -76,5 +76,14 @@ const ARTICLES = [
     "resume": "Pourquoi cette page existe, ce que tu vas y trouver, et comment ne plus jamais perdre une info de la box.",
     "url": "articles/bienvenue-sur-les-actus.html",
     "epingle": true
+  },
+  {
+    "id": "nouveau-track-extra",
+    "titre": "Nouveau : le track Extra, pour aller plus loin",
+    "rubrique": "Prog & cycles",
+    "date": "2026-08-10",
+    "resume": "Le complément quotidien du WOD pour pousser ton fitness un cran plus loin. Et l'occasion de faire le point sur tout ce que ton abonnement t'offre.",
+    "url": "articles/nouveau-track-extra.html",
+    "epingle": true
   }
 ];
