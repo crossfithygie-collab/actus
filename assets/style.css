@@ -43,7 +43,7 @@ body {
   padding: 18px 28px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 .brand { display: flex; align-items: center; gap: 14px; text-decoration: none; }
