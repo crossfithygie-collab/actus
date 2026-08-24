@@ -12,6 +12,14 @@
 
 const ARTICLES = [
   {
+    "id": "hygie-training-club-hyrox",
+    "titre": "Hygie est officiellement HYROX Training Club",
+    "rubrique": "Prog & cycles",
+    "date": "2026-08-24",
+    "resume": "Notre cours Hybrid devient le cours Hyrox : programmation officielle, coachs formés par Hyrox, simulations de course et PFT à la box.",
+    "url": "articles/hygie-training-club-hyrox.html"
+  },
+  {
     "id": "7-programmes-skills",
     "titre": "7 programmes gratuits pour débloquer tes skills",
     "rubrique": "Conseils",
