@@ -20,8 +20,8 @@ const EVENEMENTS = [
     "id": "save-the-rep-2026-09",
     "titre": "Save The Rep : apprends à sauver une vie",
     "date": "2026-09-27",
-    "horaire": "3 créneaux : 10h, 11h15 et 12h30",
-    "resume": "Ilona revient à la box avec son atelier : en 1h, tu apprends le massage cardiaque et l'utilisation du défibrillateur. 14 places par créneau, tarif libre, aucun prérequis.",
+    "horaire": "2 créneaux : 11h15 et 12h30",
+    "resume": "Ilona revient à la box avec son atelier : en 1h, tu apprends le massage cardiaque et l'utilisation du défibrillateur. Il reste 2 créneaux, 14 places chacun, tarif libre, aucun prérequis.",
     "image": "https://crossfithygie-collab.github.io/Hygieborne/str-affiche.jpg?v=2",
     "lien": "https://crossfithygie-collab.github.io/Hygieborne/save-the-rep.html",
     "libelleLien": "Je réserve ma place"
