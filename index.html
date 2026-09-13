@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/style.css?v=17">
+  <link rel="stylesheet" href="assets/style.css?v=18">
   <script src="assets/alerte.js?v=2" defer></script>
 </head>
 <body>
@@ -193,6 +193,17 @@
           });
           li.appendChild(btn);
           filtresEl.appendChild(li);
+
+          /* « Agenda » juste après « Tout » : descend jusqu'aux événements.
+             Absent s'il n'y a aucun événement à venir (agenda masqué). */
+          if (nom === "Tout" && !document.getElementById("agenda").hidden) {
+            var liAg = document.createElement("li");
+            var ag = document.createElement("a");
+            ag.href = "#agenda";
+            ag.textContent = "Agenda";
+            liAg.appendChild(ag);
+            filtresEl.appendChild(liAg);
+          }
         });
       }
 

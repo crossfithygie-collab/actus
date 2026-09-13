@@ -446,7 +446,7 @@ body {
 }
 
 /* ---------- Agenda (accueil) ---------- */
-.agenda { margin-bottom: 46px; }
+.agenda { margin-bottom: 46px; scroll-margin-top: 16px; }
 .agenda[hidden] { display: none; }
 .agenda-liste { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 440px), 1fr)); gap: 16px; }
 /* Carte horizontale : vignette carrée à gauche, texte à droite */
@@ -542,4 +542,9 @@ body {
   .alerte-item:not(:first-child) { display: none; }
   .alerte-item { white-space: normal; padding: 11px 16px; }
   .alerte-item::after { display: none; }
+}
+
+/* Clic sur « Agenda » dans le menu : défilement doux, sauf si le téléphone réduit les animations */
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
 }

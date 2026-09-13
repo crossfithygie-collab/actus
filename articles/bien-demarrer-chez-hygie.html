@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../assets/style.css?v=17">
+  <link rel="stylesheet" href="../assets/style.css?v=18">
   <script src="../assets/alerte.js?v=2" defer></script>
 </head>
 <body>
@@ -160,11 +160,12 @@
         if (ia !== -1 || ib !== -1) return (ia === -1 ? 99 : ia) - (ib === -1 ? 99 : ib);
         return a.localeCompare(b, "fr");
       });
-      ["Tout"].concat(rubriques).forEach(function (nom) {
+      ["Tout", "Agenda"].concat(rubriques).forEach(function (nom) {
         var li = document.createElement("li");
         var a = document.createElement("a");
         a.textContent = nom;
-        a.href = nom === "Tout" ? "../" : "../?r=" + encodeURIComponent(nom);
+        /* « Agenda » mène aux événements, en tête de l'accueil */
+        a.href = nom === "Tout" ? "../" : nom === "Agenda" ? "../#agenda" : "../?r=" + encodeURIComponent(nom);
         li.appendChild(a);
         menu.appendChild(li);
       });
