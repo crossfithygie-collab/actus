@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/style.css?v=18">
+  <link rel="stylesheet" href="assets/style.css?v=19">
   <script src="assets/alerte.js?v=2" defer></script>
 </head>
 <body>
@@ -31,7 +31,7 @@
       <div class="agenda-liste" id="agenda-liste"></div>
     </section>
 
-    <h2 class="section-titre">Les <em>actus</em></h2>
+    <h2 class="section-titre" id="actus-titre">Les <em>actus</em></h2>
 
     <main>
       <section class="liste" id="liste" aria-live="polite" aria-label="Liste des articles"></section>
@@ -157,9 +157,15 @@
 
       /* Filtre présélectionnable par l'URL : /?r=Challenges
          (utilisé par le menu du bandeau sur les pages d'articles) */
+      /* L'agenda n'existe que s'il y a des événements à venir (script précédent) */
+      var agendaEl = document.getElementById("agenda");
+      var AGENDA = "Agenda";
+      var aDesEvenements = agendaEl && !agendaEl.hidden;
+
       var active = null; // null = tout
       var param = new URLSearchParams(window.location.search).get("r");
       if (param && RUBRIQUES.indexOf(param) !== -1) active = param;
+      if (param === AGENDA && aDesEvenements) active = AGENDA;
 
       var listeEl = document.getElementById("liste");
       var filtresEl = document.getElementById("filtres");
@@ -178,7 +184,7 @@
 
       function construireFiltres() {
         filtresEl.innerHTML = "";
-        var tout = ["Tout"].concat(RUBRIQUES);
+        var tout = ["Tout"].concat(aDesEvenements ? [AGENDA] : [], RUBRIQUES);
         tout.forEach(function (nom) {
           var li = document.createElement("li");
           var btn = document.createElement("button");
@@ -190,25 +196,21 @@
             active = valeur;
             construireFiltres();
             afficher();
+            window.scrollTo(0, 0);
           });
           li.appendChild(btn);
           filtresEl.appendChild(li);
 
-          /* « Agenda » juste après « Tout » : descend jusqu'aux événements.
-             Absent s'il n'y a aucun événement à venir (agenda masqué). */
-          if (nom === "Tout" && !document.getElementById("agenda").hidden) {
-            var liAg = document.createElement("li");
-            var ag = document.createElement("a");
-            ag.href = "#agenda";
-            ag.textContent = "Agenda";
-            liAg.appendChild(ag);
-            filtresEl.appendChild(liAg);
-          }
         });
       }
 
       function afficher() {
+        if (aDesEvenements) agendaEl.hidden = !(active === null || active === AGENDA);
+        var seulAgenda = active === AGENDA;
+        document.getElementById("actus-titre").hidden = seulAgenda;
+        listeEl.hidden = seulAgenda;
         listeEl.innerHTML = "";
+        if (seulAgenda) return;
         var visibles = articles.filter(function (a) {
           return active === null || a.rubrique === active;
         });

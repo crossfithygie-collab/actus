@@ -447,7 +447,7 @@ body {
 
 /* ---------- Agenda (accueil) ---------- */
 .agenda { margin-bottom: 46px; scroll-margin-top: 16px; }
-.agenda[hidden] { display: none; }
+.agenda[hidden], .section-titre[hidden], .liste[hidden] { display: none; }
 .agenda-liste { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 440px), 1fr)); gap: 16px; }
 /* Carte horizontale : vignette carrée à gauche, texte à droite */
 .evenement {
