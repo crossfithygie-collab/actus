@@ -12,6 +12,14 @@
 
 const ARTICLES = [
   {
+    "id": "septembre-phase-de-transition",
+    "titre": "Septembre, la phase de transition",
+    "rubrique": "Prog & cycles",
+    "date": "2026-09-13",
+    "resume": "Retests faits : jusqu'à fin septembre, un squat lourd et un complexe à la barre chaque semaine pour garder ta force, avant le nouveau cycle de la semaine du 5 octobre.",
+    "url": "articles/septembre-phase-de-transition.html"
+  },
+  {
     "id": "hygie-training-club-hyrox",
     "titre": "Hygie est officiellement HYROX Training Club",
     "rubrique": "Prog & cycles",
