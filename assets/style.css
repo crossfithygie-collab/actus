@@ -192,6 +192,8 @@ body {
 /* ---------- Section titre centré ---------- */
 
 .wrap { max-width: 960px; margin: 0 auto; padding: 0 20px 70px; }
+/* accueil sans texte d'introduction : l'agenda démarre juste sous le bandeau */
+.wrap.accueil { padding-top: 34px; }
 
 .section-titre {
   font-family: var(--titre);
