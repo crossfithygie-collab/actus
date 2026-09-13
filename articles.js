@@ -12,6 +12,14 @@
 
 const ARTICLES = [
   {
+    "id": "challenge-septembre-row-5000",
+    "titre": "Le challenge de septembre : 5 000 m en binôme",
+    "rubrique": "Challenges",
+    "date": "2026-09-13",
+    "resume": "5 000 m au rameur ou au ski, en équipe de 2 : test le 9 septembre, re-test la semaine du 28. Tout se joue sur les relais.",
+    "url": "articles/challenge-septembre-row-5000.html"
+  },
+  {
     "id": "septembre-phase-de-transition",
     "titre": "Septembre, la phase de transition",
     "rubrique": "Prog & cycles",

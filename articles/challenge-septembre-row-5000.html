@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Le challenge de septembre : 5 000 m en binôme | Hygie CrossFit</title>
+  <meta name="description" content="Le challenge Mayhem de septembre à la box : 5 000 m au rameur ou au ski, en équipe de 2. Format, dates du test et du re-test, stratégie de relais : tout est là.">
+  <meta name="theme-color" content="#111111">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/style.css?v=11">
+</head>
+<body>
+
+  <header class="site-header">
+    <a class="brand" href="../">
+      <img src="../assets/logo.svg" alt="Logo Hygie CrossFit">
+    </a>
+    <nav aria-label="Rubriques">
+      <ul class="menu-rubriques" id="menu-rubriques"></ul>
+    </nav>
+  </header>
+
+  <article class="article-page">
+    <a class="retour" href="../">← Toutes les actus</a>
+
+    <header>
+      <span class="chip">Challenges</span>
+      <h1>Le challenge de septembre : <em>5 000 m en binôme</em></h1>
+      <p class="article-date">13 septembre 2026</p>
+    </header>
+
+    <div class="contenu">
+      <p>Chaque mois, la prog Mayhem qu'on suit à la box lance un challenge pour toute la
+      communauté. En août, c'était le bench press, chacun face à sa barre. <strong>En
+      septembre, on se met à deux</strong> : le challenge du mois se fait en binôme,
+      parce que certains objectifs se gagnent mieux ensemble.</p>
+
+      <h2>Le <em>test</em></h2>
+      <div class="encadre">
+        <p><strong>5 000 m au rameur ou au ski, en équipe de 2.</strong><br>
+        Vous vous relayez sur la machine comme vous le voulez, par exemple tous les
+        250 m ou tous les 500 m. Votre score = le temps total de l'équipe pour
+        boucler les 5 000 m.</p>
+      </div>
+
+      <h2>Les <em>dates</em></h2>
+      <ul>
+        <li><strong>Le test de départ a eu lieu mercredi 9 septembre</strong> dans le
+        cours : c'est la référence de votre binôme. Vous l'avez raté ? Pas de panique,
+        voyez avec votre coach pour poser votre temps cette semaine.</li>
+        <li><strong>Re-test : semaine du 28 septembre.</strong> Même format, si possible
+        même partenaire : vous mesurez noir sur blanc la progression de l'équipe.</li>
+      </ul>
+
+      <h2>La stratégie : tout se joue sur les <em>relais</em></h2>
+      <p>Sur 5 000 m, l'effort sur la machine compte, mais ce qui fait vraiment la
+      différence, ce sont <strong>les changements</strong>. Chaque seconde perdue à
+      descendre, remonter et se rattacher s'additionne sur toute la distance.</p>
+      <ul>
+        <li><strong>Décidez de votre plan avant de commencer.</strong> Tous les combien
+        de mètres vous changez, qui commence, et ce que fait celui qui ne rame pas.
+        Pas d'improvisation en cours de route.</li>
+        <li><strong>Des relais courts et rapides.</strong> Des séquences plus courtes
+        permettent de garder une allure élevée du début à la fin. Si vous partez sur de
+        longs relais, l'allure s'écroule dans le dernier tiers.</li>
+        <li><strong>Des transitions organisées.</strong> Celui qui arrive annonce le
+        changement, celui qui prend le relais est prêt à côté de la machine. Au rameur,
+        réglez le repose-pieds une fois pour toutes si vous avez des pointures proches,
+        sinon laissez les pieds dans les sangles non serrées.</li>
+        <li><strong>Une allure que vous pouvez tenir.</strong> Le binôme le plus rapide
+        n'est pas celui qui démarre le plus fort, c'est celui qui garde le même rythme
+        sur chaque relais.</li>
+      </ul>
+
+      <h2>Trouve ton <em>binôme</em></h2>
+      <p>Pas encore de partenaire ? Demande au coach en début de cours, on compose les
+      équipes sur place. Pas besoin d'avoir le même niveau : l'intérêt du format, c'est
+      justement que chacun apporte ce qu'il a, et que le score appartient à l'équipe.</p>
+
+      <div class="encadre">
+        <p>📲 <strong>Notez votre temps dans Strivee</strong> après le test ET après le
+        re-test : c'est ce qui permet de voir votre progression et le classement de la
+        box. Un doute sur comment faire ? Le tuto est dans
+        <a href="strivee-mode-demploi.html">Strivee : le mode d'emploi</a>.</p>
+      </div>
+
+      <p>Le challenge est lancé : 5 000 m, deux athlètes, et deux semaines pour affûter
+      vos relais avant le re-test. À vous de jouer 💪</p>
+    </div>
+  </article>
+
+  <footer class="site-footer">
+    <img src="../assets/logo.svg" alt="Logo Hygie CrossFit">
+    <ul class="footer-nav">
+      <li><a href="../">Les actus</a></li>
+      <li><a href="bien-demarrer-chez-hygie.html">Bien démarrer</a></li>
+      <li><a href="https://crossfithygie-collab.github.io/Hygieborne/reserver.html">Réserver</a></li>
+    </ul>
+    <p class="footer-legal">CrossFit&reg; Hygie · Seclin · Box affiliée CrossFit&reg;</p>
+  </footer>
+
+  <script src="../articles.js?v=11"></script>
+  <script>
+    (function () {
+      var menu = document.getElementById("menu-rubriques");
+      if (!menu || typeof ARTICLES === "undefined") return;
+      var rubriques = [];
+      ARTICLES.forEach(function (a) {
+        if (rubriques.indexOf(a.rubrique) === -1) rubriques.push(a.rubrique);
+      });
+      rubriques.sort(function (a, b) { return a.localeCompare(b, "fr"); });
+      ["Tout"].concat(rubriques).forEach(function (nom) {
+        var li = document.createElement("li");
+        var a = document.createElement("a");
+        a.textContent = nom;
+        a.href = nom === "Tout" ? "../" : "../?r=" + encodeURIComponent(nom);
+        li.appendChild(a);
+        menu.appendChild(li);
+      });
+    })();
+  </script>
+  <script data-goatcounter="https://hygie.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+  <script src="../assets/stats.js"></script>
+</body>
+</html>
