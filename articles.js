@@ -98,8 +98,7 @@ const ARTICLES = [
     "rubrique": "Pour démarrer",
     "date": "2026-08-02",
     "resume": "Pourquoi cette page existe, ce que tu vas y trouver, et comment ne plus jamais perdre une info de la box.",
-    "url": "articles/bienvenue-sur-les-actus.html",
-    "epingle": true
+    "url": "articles/bienvenue-sur-les-actus.html"
   },
   {
     "id": "nouveau-track-extra",
@@ -107,7 +106,6 @@ const ARTICLES = [
     "rubrique": "Prog & cycles",
     "date": "2026-08-10",
     "resume": "Le complément quotidien du WOD pour pousser ton fitness un cran plus loin. Et l'occasion de faire le point sur tout ce que ton abonnement t'offre.",
-    "url": "articles/nouveau-track-extra.html",
-    "epingle": true
+    "url": "articles/nouveau-track-extra.html"
   }
 ];
