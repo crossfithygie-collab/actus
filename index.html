@@ -10,7 +10,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/style.css?v=12">
+  <link rel="stylesheet" href="assets/style.css?v=16">
+  <script src="assets/alerte.js?v=2" defer></script>
 </head>
 <body>
 
@@ -41,12 +42,17 @@
     </main>
   </div>
 
+  <div class="visionneuse" id="visionneuse" role="dialog" aria-modal="true" aria-label="Visuel agrandi" hidden>
+    <button class="visionneuse-fermer" type="button" aria-label="Fermer">×</button>
+    <img alt="">
+  </div>
+
   <footer class="site-footer">
     <img src="assets/logo.svg" alt="Logo Hygie CrossFit">
     <ul class="footer-nav">
       <li><a href="./">Les actus</a></li>
       <li><a href="articles/bien-demarrer-chez-hygie.html">Bien démarrer</a></li>
-      <li><a href="https://www.crossfit-hygie.fr/#planning">Planning</a></li>
+      <li><a href="https://www.crossfit-hygie.fr/#planning" target="_blank" rel="noopener">Planning</a></li>
     </ul>
     <p class="footer-legal">CrossFit&reg; Hygie · Seclin · Box affiliée CrossFit&reg;</p>
   </footer>
@@ -65,6 +71,28 @@
       }).sort(function (a, b) { return a.date.localeCompare(b.date); });
       if (!avenir.length) return;
 
+      /* Visionneuse : un toucher sur le visuel l'ouvre en grand au premier plan ;
+         un toucher n'importe où, la croix ou Échap la referment. */
+      var vis = document.getElementById("visionneuse");
+      var visImg = vis.querySelector("img");
+      var dernierFocus = null;
+      function ouvrir(src, alt) {
+        dernierFocus = document.activeElement;
+        visImg.src = src; visImg.alt = alt;
+        vis.hidden = false;
+        document.body.style.overflow = "hidden";
+        vis.querySelector(".visionneuse-fermer").focus();
+      }
+      function fermer() {
+        vis.hidden = true;
+        document.body.style.overflow = "";
+        if (dernierFocus) dernierFocus.focus();
+      }
+      vis.addEventListener("click", fermer);
+      document.addEventListener("keydown", function (ev) {
+        if (ev.key === "Escape" && !vis.hidden) fermer();
+      });
+
       var jour = new Intl.DateTimeFormat("fr-FR", { weekday: "long" });
       var mois = new Intl.DateTimeFormat("fr-FR", { month: "short" });
       var liste = document.getElementById("agenda-liste");
@@ -72,40 +100,42 @@
       avenir.forEach(function (e) {
         var d = new Date(e.date + "T12:00:00");
         var carte = document.createElement("article");
-        carte.className = "evenement";
+        carte.className = "evenement" + (e.image ? "" : " sans-visuel");
 
+        /* Vignette à gauche, carrée et identique pour tous : l'image la remplit
+           (légèrement recadrée), un toucher l'ouvre en entier dans la visionneuse. */
         if (e.image) {
           var img = document.createElement("img");
           img.className = "evenement-visuel";
-          img.src = e.image; img.alt = ""; img.loading = "lazy";
+          img.src = e.image; img.alt = "Visuel : " + e.titre; img.loading = "lazy";
+          img.tabIndex = 0; img.setAttribute("role", "button");
+          img.title = "Agrandir le visuel";
+          img.addEventListener("click", function () { ouvrir(e.image, img.alt); });
+          img.addEventListener("keydown", function (ev) {
+            if (ev.key === "Enter" || ev.key === " ") { ev.preventDefault(); ouvrir(e.image, img.alt); }
+          });
           carte.appendChild(img);
         }
 
-        var corps = document.createElement("div");
-        corps.className = "evenement-corps";
-
-        var date = document.createElement("div");
-        date.className = "evenement-date";
-        date.innerHTML = '<span class="ev-jour"></span><span class="ev-num"></span><span class="ev-mois"></span>';
-        date.querySelector(".ev-jour").textContent = jour.format(d);
-        date.querySelector(".ev-num").textContent = d.getDate();
-        date.querySelector(".ev-mois").textContent = mois.format(d).replace(".", "");
-
         var texte = document.createElement("div");
         texte.className = "evenement-texte";
+
+        var date = document.createElement("p");
+        date.className = "evenement-date";
+        date.textContent = jour.format(d) + " " + d.getDate() + " " + mois.format(d).replace(".", "");
+
         var h3 = document.createElement("h3"); h3.textContent = e.titre;
         var horaire = document.createElement("p"); horaire.className = "evenement-horaire"; horaire.textContent = e.horaire;
-        var resume = document.createElement("p"); resume.textContent = e.resume;
-        texte.appendChild(h3); texte.appendChild(horaire); texte.appendChild(resume);
+        var resume = document.createElement("p"); resume.className = "evenement-resume"; resume.textContent = e.resume;
+        texte.appendChild(date); texte.appendChild(h3); texte.appendChild(horaire); texte.appendChild(resume);
         if (e.lien) {
           var a = document.createElement("a");
           a.className = "evenement-lien"; a.href = e.lien;
+          a.target = "_blank"; a.rel = "noopener";
           a.textContent = (e.libelleLien || "En savoir plus") + " →";
           texte.appendChild(a);
         }
-
-        corps.appendChild(date); corps.appendChild(texte);
-        carte.appendChild(corps);
+        carte.appendChild(texte);
         liste.appendChild(carte);
       });
       document.getElementById("agenda").hidden = false;
