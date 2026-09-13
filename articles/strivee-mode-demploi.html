@@ -132,7 +132,13 @@
       ARTICLES.forEach(function (a) {
         if (rubriques.indexOf(a.rubrique) === -1) rubriques.push(a.rubrique);
       });
-      rubriques.sort(function (a, b) { return a.localeCompare(b, "fr"); });
+      /* « Pour démarrer » juste après « Tout », le reste par ordre alphabétique */
+      var EN_TETE = ["Pour démarrer"];
+      rubriques.sort(function (a, b) {
+        var ia = EN_TETE.indexOf(a), ib = EN_TETE.indexOf(b);
+        if (ia !== -1 || ib !== -1) return (ia === -1 ? 99 : ia) - (ib === -1 ? 99 : ib);
+        return a.localeCompare(b, "fr");
+      });
       ["Tout"].concat(rubriques).forEach(function (nom) {
         var li = document.createElement("li");
         var a = document.createElement("a");

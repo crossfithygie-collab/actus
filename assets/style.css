@@ -442,3 +442,32 @@ body {
   .bandeau-int .picto { display: none; }
   .carte { padding: 20px 22px; }
 }
+
+/* ---------- Agenda (accueil) ---------- */
+.agenda { margin-bottom: 46px; }
+.agenda[hidden] { display: none; }
+.agenda-liste { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 18px; }
+.evenement {
+  display: flex; flex-direction: column;
+  background: var(--blanc); border: 1px solid var(--bord); border-radius: var(--radius);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, .05); overflow: hidden;
+}
+/* Les visuels sont des affiches (en hauteur) ou des bandeaux (en largeur) :
+   même cadre de 200 px pour toutes les cartes (demande de Jeremy), image entière
+   à l'intérieur, jamais recadrée, sinon le texte de l'affiche est coupé. */
+.evenement-visuel { display: block; width: 100%; height: 200px; object-fit: contain; background: var(--noir); }
+.evenement-corps { display: flex; gap: 16px; padding: 20px 22px 22px; flex: 1; }
+.evenement-date {
+  flex: 0 0 62px; align-self: flex-start; text-align: center;
+  background: var(--noir); color: var(--blanc); border-radius: 8px; padding: 8px 4px 10px;
+  display: flex; flex-direction: column; line-height: 1;
+}
+.ev-jour { font-size: 10px; letter-spacing: .08em; text-transform: uppercase; opacity: .75; }
+.ev-num { font-family: var(--titre); font-size: 36px; color: var(--rouge-clair); margin: 4px 0 2px; }
+.ev-mois { font-family: var(--titre); font-size: 16px; letter-spacing: .06em; text-transform: uppercase; }
+.evenement-texte { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+.evenement h3 { font-family: var(--titre); font-weight: 400; font-size: 26px; line-height: 1.05; letter-spacing: .02em; margin: 0; }
+.evenement-horaire { color: var(--rouge); font-weight: 600; font-size: 14px; margin: 0; }
+.evenement-texte p { color: var(--texte-2); font-size: 14.5px; margin: 0; }
+.evenement-lien { margin-top: 6px; color: var(--rouge); font-weight: 600; font-size: 14.5px; text-decoration: none; }
+.evenement-lien:hover, .evenement-lien:focus-visible { text-decoration: underline; }

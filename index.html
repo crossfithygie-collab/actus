@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/style.css?v=11">
+  <link rel="stylesheet" href="assets/style.css?v=12">
 </head>
 <body>
 
@@ -29,6 +29,11 @@
   </section>
 
   <div class="wrap">
+    <section class="agenda" id="agenda" aria-labelledby="agenda-titre" hidden>
+      <h2 class="section-titre" id="agenda-titre">L'<em>agenda</em></h2>
+      <div class="agenda-liste" id="agenda-liste"></div>
+    </section>
+
     <h2 class="section-titre">Les <em>actus</em></h2>
 
     <main>
@@ -47,6 +52,65 @@
   </footer>
 
   <script src="articles.js?v=12"></script>
+  <script src="evenements.js?v=1"></script>
+  <script>
+    /* L'agenda : les événements à venir, du plus proche au plus lointain.
+       Un événement reste affiché jusqu'au soir de sa date, puis disparaît. */
+    (function () {
+      "use strict";
+      if (typeof EVENEMENTS === "undefined") return;
+      var aujourdhui = new Date(); aujourdhui.setHours(0, 0, 0, 0);
+      var avenir = EVENEMENTS.filter(function (e) {
+        return new Date(e.date + "T00:00:00") >= aujourdhui;
+      }).sort(function (a, b) { return a.date.localeCompare(b.date); });
+      if (!avenir.length) return;
+
+      var jour = new Intl.DateTimeFormat("fr-FR", { weekday: "long" });
+      var mois = new Intl.DateTimeFormat("fr-FR", { month: "short" });
+      var liste = document.getElementById("agenda-liste");
+
+      avenir.forEach(function (e) {
+        var d = new Date(e.date + "T12:00:00");
+        var carte = document.createElement("article");
+        carte.className = "evenement";
+
+        if (e.image) {
+          var img = document.createElement("img");
+          img.className = "evenement-visuel";
+          img.src = e.image; img.alt = ""; img.loading = "lazy";
+          carte.appendChild(img);
+        }
+
+        var corps = document.createElement("div");
+        corps.className = "evenement-corps";
+
+        var date = document.createElement("div");
+        date.className = "evenement-date";
+        date.innerHTML = '<span class="ev-jour"></span><span class="ev-num"></span><span class="ev-mois"></span>';
+        date.querySelector(".ev-jour").textContent = jour.format(d);
+        date.querySelector(".ev-num").textContent = d.getDate();
+        date.querySelector(".ev-mois").textContent = mois.format(d).replace(".", "");
+
+        var texte = document.createElement("div");
+        texte.className = "evenement-texte";
+        var h3 = document.createElement("h3"); h3.textContent = e.titre;
+        var horaire = document.createElement("p"); horaire.className = "evenement-horaire"; horaire.textContent = e.horaire;
+        var resume = document.createElement("p"); resume.textContent = e.resume;
+        texte.appendChild(h3); texte.appendChild(horaire); texte.appendChild(resume);
+        if (e.lien) {
+          var a = document.createElement("a");
+          a.className = "evenement-lien"; a.href = e.lien;
+          a.textContent = (e.libelleLien || "En savoir plus") + " →";
+          texte.appendChild(a);
+        }
+
+        corps.appendChild(date); corps.appendChild(texte);
+        carte.appendChild(corps);
+        liste.appendChild(carte);
+      });
+      document.getElementById("agenda").hidden = false;
+    })();
+  </script>
   <script>
     (function () {
       "use strict";
@@ -57,7 +121,13 @@
       ARTICLES.forEach(function (a) {
         if (RUBRIQUES.indexOf(a.rubrique) === -1) RUBRIQUES.push(a.rubrique);
       });
-      RUBRIQUES.sort(function (a, b) { return a.localeCompare(b, "fr"); });
+      /* « Pour démarrer » juste après « Tout », le reste par ordre alphabétique */
+      var EN_TETE = ["Pour démarrer"];
+      RUBRIQUES.sort(function (a, b) {
+        var ia = EN_TETE.indexOf(a), ib = EN_TETE.indexOf(b);
+        if (ia !== -1 || ib !== -1) return (ia === -1 ? 99 : ia) - (ib === -1 ? 99 : ib);
+        return a.localeCompare(b, "fr");
+      });
 
       /* Filtre présélectionnable par l'URL : /?r=Challenges
          (utilisé par le menu du bandeau sur les pages d'articles) */
