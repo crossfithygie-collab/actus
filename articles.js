@@ -12,6 +12,14 @@
 
 const ARTICLES = [
   {
+    "id": "pieds-solides-courir-sans-blessure",
+    "titre": "Des pieds solides pour courir sans te blesser",
+    "rubrique": "Conseils",
+    "date": "2026-09-13",
+    "resume": "Mal aux tibias ou aux genoux en courant ? Ce que disent les études sur le rôle du pied, ce que valent les semelles, et une routine de 15 minutes, 3 fois par semaine.",
+    "url": "articles/pieds-solides-courir-sans-blessure.html"
+  },
+  {
     "id": "challenge-septembre-row-5000",
     "titre": "Le challenge de septembre : 5 000 m en binôme",
     "rubrique": "Challenges",
