@@ -12,6 +12,14 @@
 
 const ARTICLES = [
   {
+    "id": "cycle-montee-de-corde",
+    "titre": "Quatre semaines pour apprivoiser la corde",
+    "rubrique": "Prog & cycles",
+    "date": "2026-09-21",
+    "resume": "Du 16 septembre au 14 octobre, le cycle skill porte sur la montée de corde : trois niveaux de progression, et une version adaptée pour chacun à chaque séance.",
+    "url": "articles/cycle-montee-de-corde.html"
+  },
+  {
     "id": "pieds-solides-courir-sans-blessure",
     "titre": "Des pieds solides pour courir sans te blesser",
     "rubrique": "Conseils",
