@@ -16,7 +16,7 @@ const ARTICLES = [
     "titre": "Quatre semaines pour apprivoiser la corde",
     "rubrique": "Prog & cycles",
     "date": "2026-09-21",
-    "resume": "Du 16 septembre au 14 octobre, le cycle skill porte sur la montée de corde : trois niveaux de progression, et une version adaptée pour chacun à chaque séance.",
+    "resume": "Les mercredis de 17h30 à 18h30, du 16 septembre au 14 octobre : le cycle skill du moment, c'est la montée de corde, avec trois niveaux de progression et une version adaptée pour chacun.",
     "url": "articles/cycle-montee-de-corde.html"
   },
   {
