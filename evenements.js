@@ -66,9 +66,9 @@ const EVENEMENTS = [
     "titre": "Black Friday : l'abonnement annuel",
     "date": "2026-11-27",
     "horaire": "24 heures seulement",
-    "resume": "L'abonnement annuel à prix Black Friday, un seul jour. Inscris-toi sur la liste d'attente pour recevoir l'offre en premier.",
+    "resume": "L'abonnement annuel à prix Black Friday, un seul jour. Attention : l'offre est envoyée uniquement aux inscrits. Pas inscrit, pas d'offre !",
     "lien": "https://hygiebot.tail7ef5c3.ts.net/hub/liste/bf",
-    "libelleLien": "Je veux recevoir l'offre"
+    "libelleLien": "Je m'inscris pour recevoir l'offre"
   },
   {
     "id": "compet-interne-2026-11",
