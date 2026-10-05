@@ -55,7 +55,7 @@ const EVENEMENTS = [
   {
     "id": "workshop-gym-2026-11",
     "titre": "Workshop gym : toes-to-bar et pull-up",
-    "date": "2026-11-07",
+    "date": "2026-11-08",
     "horaire": "14h à 16h, avec Baptiste",
     "resume": "Deux heures pour débloquer les toes-to-bar et les pull-up : gainage, kipping, grip, timing. Chacun travaille à son niveau. 30 €, 24 places seulement.",
     "lien": "https://buy.stripe.com/3cIeVf78y563eOB4Msdby06",
