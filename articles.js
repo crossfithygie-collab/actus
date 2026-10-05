@@ -12,6 +12,22 @@
 
 const ARTICLES = [
   {
+    "id": "challenge-octobre-chemin-vers-chad",
+    "titre": "Le challenge d'octobre : le chemin vers Chad",
+    "rubrique": "Challenges",
+    "date": "2026-10-05",
+    "resume": "Le Step Up Challenge (AMRAP de box step-ups, 5 minutes de plus chaque semaine) et sept benchmarks dans les WOD, en route vers Chad : 1000 box step-ups for time.",
+    "url": "articles/challenge-octobre-chemin-vers-chad.html"
+  },
+  {
+    "id": "cycle-octobre-clean-jerk-deadlift",
+    "titre": "Huit semaines de force : clean & jerk et deadlift",
+    "rubrique": "Prog & cycles",
+    "date": "2026-10-05",
+    "resume": "Depuis le 5 octobre, un nouveau cycle Mayhem de huit semaines : power clean and jerk et deadlift, de 3 x 12 à 3 x 6, puis la même progression plus lourde.",
+    "url": "articles/cycle-octobre-clean-jerk-deadlift.html"
+  },
+  {
     "id": "cycle-montee-de-corde",
     "titre": "Quatre semaines pour apprivoiser la corde",
     "rubrique": "Prog & cycles",
