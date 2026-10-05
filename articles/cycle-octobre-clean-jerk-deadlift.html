@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Huit semaines de force : clean & jerk et deadlift | Hygie CrossFit</title>
+  <meta name="description" content="Le nouveau cycle Mayhem démarre le 5 octobre : huit semaines de power clean and jerk et de deadlift, de 3 x 12 à 3 x 6, puis la même progression plus lourde.">
+  <meta name="theme-color" content="#111111">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/style.css?v=19">
+  <script src="../assets/alerte.js?v=2" defer></script>
+</head>
+<body>
+
+  <header class="site-header">
+    <a class="brand" href="../">
+      <img src="../assets/logo.svg" alt="Logo Hygie CrossFit">
+    </a>
+    <nav aria-label="Rubriques">
+      <ul class="menu-rubriques" id="menu-rubriques"></ul>
+    </nav>
+  </header>
+
+  <article class="article-page">
+    <a class="retour" href="../">← Toutes les actus</a>
+
+    <header>
+      <span class="chip">Prog &amp; cycles</span>
+      <h1>Huit semaines de force : <em>clean &amp; jerk et deadlift</em></h1>
+      <p class="article-date">5 octobre 2026</p>
+    </header>
+
+    <div class="contenu">
+      <p>Septembre était une phase de transition. <strong>Depuis aujourd'hui, lundi 5 octobre,
+      on attaque un nouveau cycle Mayhem de huit semaines</strong>, centré sur deux mouvements qu'on
+      va voir et revoir jusqu'à ce qu'ils deviennent naturels : le <strong>power clean and jerk</strong>
+      et le <strong>deadlift</strong>.</p>
+
+      <h2>La <em>logique</em></h2>
+      <p>Elle est simple, et c'est ce qui la rend efficace : on commence sur des séries longues,
+      et on raccourcit semaine après semaine pendant que la barre s'alourdit.</p>
+      <div class="encadre">
+        <p><strong>Semaines 1 à 4 : 3 × 12, puis 3 × 10, puis 3 × 8, puis 3 × 6</strong>,
+        avec une charge qui monte à chaque palier.<br>
+        <strong>Semaines 5 à 8 : la même progression, plus lourde</strong>, en repartant de tes
+        charges du premier bloc.</p>
+      </div>
+
+      <h2>La première <em>semaine</em></h2>
+      <ul>
+        <li><strong>Power clean and jerk</strong> : on démarre par l'enseignement du mouvement et
+        le choix des charges, avant le premier travail de force. Prends le temps de trouver une
+        charge que tu peux tenir proprement sur toutes les reps.</li>
+        <li><strong>Deadlift</strong> : premier jour en 3 séries de 12 pour monter jusqu'à ton
+        <strong>12RM</strong>, la charge maximale que tu peux soulever 12 fois. C'est ton test de
+        référence pour tout le cycle.</li>
+      </ul>
+
+      <h2>Comment en tirer le <em>maximum</em></h2>
+      <ul>
+        <li><strong>La technique d'abord.</strong> Sur des séries de 12, la fatigue arrive vite :
+        une barre un peu plus légère mais propre te fera progresser plus qu'une barre lourde mal
+        placée.</li>
+        <li><strong>Note tout.</strong> Chaque palier part des charges de la semaine précédente.
+        Sans tes chiffres, tu repars à l'aveugle.</li>
+        <li><strong>Monte par petites marches.</strong> Le cycle dure huit semaines : pas besoin
+        de tout donner dès la première.</li>
+      </ul>
+
+      <div class="encadre">
+        <p>📲 <strong>Note tes charges et tes scores dans Strivee</strong> à chaque séance :
+        c'est ce qui te permet de voir le chemin parcouru, et de comparer avec la box.
+        Un doute sur comment faire ? Le tuto est dans
+        <a href="strivee-mode-demploi.html" target="_blank" rel="noopener">Strivee : le mode d'emploi</a>.</p>
+      </div>
+
+      <p>Huit semaines, deux mouvements, et une barre qui monte à chaque palier. On se retrouve
+      sur le floor 💪</p>
+    </div>
+  </article>
+
+  <footer class="site-footer">
+    <img src="../assets/logo.svg" alt="Logo Hygie CrossFit">
+    <ul class="footer-nav">
+      <li><a href="../">Les actus</a></li>
+      <li><a href="bien-demarrer-chez-hygie.html">Bien démarrer</a></li>
+      <li><a href="https://crossfithygie-collab.github.io/Hygieborne/reserver.html" target="_blank" rel="noopener">Réserver</a></li>
+    </ul>
+    <p class="footer-legal">CrossFit&reg; Hygie · Seclin · Box affiliée CrossFit&reg;</p>
+  </footer>
+
+  <script src="../articles.js?v=15"></script>
+  <script>
+    (function () {
+      var menu = document.getElementById("menu-rubriques");
+      if (!menu || typeof ARTICLES === "undefined") return;
+      var rubriques = [];
+      ARTICLES.forEach(function (a) {
+        if (rubriques.indexOf(a.rubrique) === -1) rubriques.push(a.rubrique);
+      });
+      /* « Pour démarrer » juste après « Tout », le reste par ordre alphabétique */
+      var EN_TETE = ["Pour démarrer"];
+      rubriques.sort(function (a, b) {
+        var ia = EN_TETE.indexOf(a), ib = EN_TETE.indexOf(b);
+        if (ia !== -1 || ib !== -1) return (ia === -1 ? 99 : ia) - (ib === -1 ? 99 : ib);
+        return a.localeCompare(b, "fr");
+      });
+      ["Tout", "Agenda"].concat(rubriques).forEach(function (nom) {
+        var li = document.createElement("li");
+        var a = document.createElement("a");
+        a.textContent = nom;
+        /* « Agenda » ouvre l'accueil filtré sur les événements */
+        a.href = nom === "Tout" ? "../" : nom === "Agenda" ? "../?r=Agenda" : "../?r=" + encodeURIComponent(nom);
+        li.appendChild(a);
+        menu.appendChild(li);
+      });
+    })();
+  </script>
+  <script data-goatcounter="https://hygie.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+  <script src="../assets/stats.js"></script>
+</body>
+</html>
