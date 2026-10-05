@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Le challenge d'octobre : le chemin vers Chad | Hygie CrossFit</title>
+  <meta name="description" content="Le challenge Mayhem d'octobre : le Step Up Challenge (AMRAP de box step-ups, +5 min chaque semaine) et sept benchmarks, en route vers Chad, 1000 box step-ups.">
+  <meta name="theme-color" content="#111111">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/style.css?v=19">
+  <script src="../assets/alerte.js?v=2" defer></script>
+</head>
+<body>
+
+  <header class="site-header">
+    <a class="brand" href="../">
+      <img src="../assets/logo.svg" alt="Logo Hygie CrossFit">
+    </a>
+    <nav aria-label="Rubriques">
+      <ul class="menu-rubriques" id="menu-rubriques"></ul>
+    </nav>
+  </header>
+
+  <article class="article-page">
+    <a class="retour" href="../">← Toutes les actus</a>
+
+    <header>
+      <span class="chip">Challenges</span>
+      <h1>Le challenge d'octobre : <em>le chemin vers Chad</em></h1>
+      <p class="article-date">5 octobre 2026</p>
+    </header>
+
+    <div class="contenu">
+      <p>Chaque mois, la prog Mayhem lance un challenge pour toute la communauté. En août, le bench
+      press ; en septembre, 5 000 m en binôme. <strong>En octobre, on part vers Chad</strong> :
+      1000 box step-ups for time, une marche à la fois, et on y va par les benchmarks.</p>
+
+      <img src="https://crossfithygie-collab.github.io/Hygieborne/challenge-oct.jpg?v=1"
+           alt="Visuel du Step Up Challenge Mayhem : baseline le 5 octobre, AMRAP de 15 minutes de box step-ups à 20 pouces, score au total de reps, 5 minutes de plus chaque semaine"
+           width="620" height="775" loading="lazy">
+
+      <h2>Le fil rouge : le <em>Step Up Challenge</em></h2>
+      <div class="encadre">
+        <p><strong>AMRAP de 15:00 : un maximum de box step-ups, box de 50 cm (20").</strong><br>
+        Score = le nombre total de reps. La baseline tombe <strong>aujourd'hui, lundi 5 octobre</strong>,
+        en WOD. Ensuite, <strong>l'AMRAP prend 5 minutes de plus chaque semaine</strong>.</p>
+      </div>
+      <p>Avec ton score, note la <strong>hauteur de box</strong> et, si tu en portes un, le
+      <strong>poids du gilet ou du sac</strong> : c'est ce qui rend tes résultats comparables d'une
+      semaine à l'autre.</p>
+
+      <h2>Les <em>benchmarks</em></h2>
+      <p>Des séances repères, de celles qu'on note quelque part pour les retrouver dans un an.
+      Les dates sont posées et tombent dans les WOD : tu n'as rien à organiser.</p>
+      <ul>
+        <li><strong>Mardi 6 octobre</strong> : Jason</li>
+        <li><strong>Vendredi 9 octobre</strong> : Kelly</li>
+        <li><strong>Mardi 13 octobre</strong> : Heavy Grace</li>
+        <li><strong>Samedi 17 octobre</strong> : Big Steve</li>
+        <li><strong>Vendredi 23 octobre</strong> : Jack</li>
+        <li><strong>Lundi 26 octobre</strong> : Death Race</li>
+        <li><strong>Mercredi 28 octobre</strong> : Helen</li>
+      </ul>
+
+      <h2>Au bout du chemin : <em>Chad</em></h2>
+      <p><strong>1000 box step-ups for time.</strong> La date sera précisée bientôt. D'ici là, le
+      Step Up Challenge prépare tes jambes semaine après semaine, et les benchmarks entretiennent
+      tout le reste.</p>
+
+      <div class="encadre">
+        <p>📲 <strong>Note tes charges et tes scores dans Strivee</strong> à chaque séance :
+        c'est ce qui te permet de voir le chemin parcouru, et de comparer avec la box.
+        Un doute sur comment faire ? Le tuto est dans
+        <a href="strivee-mode-demploi.html" target="_blank" rel="noopener">Strivee : le mode d'emploi</a>.</p>
+      </div>
+
+      <p>Quatre semaines, sept benchmarks et une box de 50 cm. À vous de jouer 💪</p>
+    </div>
+  </article>
+
+  <footer class="site-footer">
+    <img src="../assets/logo.svg" alt="Logo Hygie CrossFit">
+    <ul class="footer-nav">
+      <li><a href="../">Les actus</a></li>
+      <li><a href="bien-demarrer-chez-hygie.html">Bien démarrer</a></li>
+      <li><a href="https://crossfithygie-collab.github.io/Hygieborne/reserver.html" target="_blank" rel="noopener">Réserver</a></li>
+    </ul>
+    <p class="footer-legal">CrossFit&reg; Hygie · Seclin · Box affiliée CrossFit&reg;</p>
+  </footer>
+
+  <script src="../articles.js?v=15"></script>
+  <script>
+    (function () {
+      var menu = document.getElementById("menu-rubriques");
+      if (!menu || typeof ARTICLES === "undefined") return;
+      var rubriques = [];
+      ARTICLES.forEach(function (a) {
+        if (rubriques.indexOf(a.rubrique) === -1) rubriques.push(a.rubrique);
+      });
+      /* « Pour démarrer » juste après « Tout », le reste par ordre alphabétique */
+      var EN_TETE = ["Pour démarrer"];
+      rubriques.sort(function (a, b) {
+        var ia = EN_TETE.indexOf(a), ib = EN_TETE.indexOf(b);
+        if (ia !== -1 || ib !== -1) return (ia === -1 ? 99 : ia) - (ib === -1 ? 99 : ib);
+        return a.localeCompare(b, "fr");
+      });
+      ["Tout", "Agenda"].concat(rubriques).forEach(function (nom) {
+        var li = document.createElement("li");
+        var a = document.createElement("a");
+        a.textContent = nom;
+        /* « Agenda » ouvre l'accueil filtré sur les événements */
+        a.href = nom === "Tout" ? "../" : nom === "Agenda" ? "../?r=Agenda" : "../?r=" + encodeURIComponent(nom);
+        li.appendChild(a);
+        menu.appendChild(li);
+      });
+    })();
+  </script>
+  <script data-goatcounter="https://hygie.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+  <script src="../assets/stats.js"></script>
+</body>
+</html>
