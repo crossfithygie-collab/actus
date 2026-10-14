@@ -12,6 +12,14 @@
 
 const ARTICLES = [
   {
+    "id": "cycle-double-under",
+    "titre": "Le nouveau cycle skill, c'est le double under",
+    "rubrique": "Prog & cycles",
+    "date": "2026-10-14",
+    "resume": "Du 21 octobre au 25 novembre, le créneau skill du mercredi 17h30 passe sur la corde à sauter : trois niveaux de progression, du premier double under à l'enchaînement sous le souffle.",
+    "url": "articles/cycle-double-under.html"
+  },
+  {
     "id": "challenge-octobre-chemin-vers-chad",
     "titre": "Le challenge d'octobre : le chemin vers Chad",
     "rubrique": "Challenges",
