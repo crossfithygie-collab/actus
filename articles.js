@@ -12,6 +12,14 @@
 
 const ARTICLES = [
   {
+    "id": "crossfit-open-2027",
+    "titre": "L'Open 2027 du CrossFit : les dates sont tombées, et oui, c'est pour toi aussi",
+    "rubrique": "Challenges",
+    "date": "2026-10-16",
+    "resume": "Open 2027 du CrossFit : du 18 février au 8 mars, 3 workouts, 3 niveaux, débutants compris. L'essentiel avant de le vivre chez Hygie à Seclin.",
+    "url": "articles/crossfit-open-2027.html"
+  },
+  {
     "id": "cycle-double-under",
     "titre": "Le nouveau cycle skill, c'est le double under",
     "rubrique": "Prog & cycles",
