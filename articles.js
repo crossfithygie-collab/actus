@@ -12,6 +12,14 @@
 
 const ARTICLES = [
   {
+    "id": "separateur-metcon",
+    "titre": "Metcon : trouve ton séparateur et gagne des places sans plus de cardio",
+    "rubrique": "Conseils",
+    "date": "2026-10-22",
+    "resume": "Le mouvement qui te coûte le plus de temps décide de ton score. Comment le repérer, construire ton plan de split autour, et progresser en WOD sans plus de cardio.",
+    "url": "articles/separateur-metcon.html"
+  },
+  {
     "id": "crossfit-open-2027",
     "titre": "L'Open 2027 du CrossFit : les dates sont tombées, et oui, c'est pour toi aussi",
     "rubrique": "Challenges",
