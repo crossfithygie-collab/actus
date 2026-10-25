@@ -12,6 +12,14 @@
 
 const ARTICLES = [
   {
+    "id": "frequence-cardiaque-repos-montre",
+    "titre": "Fréquence cardiaque au repos : ce que ta montre ne te dit pas",
+    "rubrique": "Conseils",
+    "date": "2026-10-25",
+    "resume": "Ta FC au repos en dit long sur ta forme, ta fatigue ou un rhume qui arrive. Comment la mesurer, la lire, et ce que ta montre ne sait pas de toi.",
+    "url": "articles/frequence-cardiaque-repos-montre.html"
+  },
+  {
     "id": "separateur-metcon",
     "titre": "Metcon : trouve ton séparateur et gagne des places sans plus de cardio",
     "rubrique": "Conseils",
