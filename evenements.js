@@ -65,8 +65,11 @@ const EVENEMENTS = [
     "id": "the-chad-2026-11",
     "titre": "The Chad : le Hero WOD des 1 000 step-ups",
     "date": "2026-11-11",
-    "horaire": "À partir de 10h, à la box",
-    "resume": "Le 11 novembre, on fait The Chad ensemble : 1 000 step-ups sur box, un Hero WOD en hommage à Chad Wilkinson, Navy SEAL. Avec ou sans sac lesté, chacun à son niveau, et on se pousse jusqu'à la dernière rep."
+    "horaire": "3 créneaux : 9h45, 11h et 12h30, à la box",
+    "resume": "Le 11 novembre, on fait The Chad ensemble : 1 000 step-ups sur box, un Hero WOD en hommage à Chad Wilkinson, Navy SEAL. Avec ou sans sac lesté, seul ou en team de 2 (une team compte pour une place). 20 places par créneau, réservé aux adhérents.",
+    "image": "https://crossfithygie-collab.github.io/Hygieborne/evenements/the-chad.png?v=2",
+    "lien": "https://hygiebot.tail7ef5c3.ts.net/hub/inscription/the-chad-2026-11",
+    "libelleLien": "Je réserve mon créneau"
   },
   {
     "id": "black-friday-2026",
