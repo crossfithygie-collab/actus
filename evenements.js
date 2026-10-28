@@ -65,7 +65,7 @@ const EVENEMENTS = [
     "id": "the-chad-2026-11",
     "titre": "The Chad : le Hero WOD des 1 000 step-ups",
     "date": "2026-11-11",
-    "horaire": "Jour férié, à la box (horaire précisé très vite)",
+    "horaire": "À partir de 10h, à la box",
     "resume": "Le 11 novembre, on fait The Chad ensemble : 1 000 step-ups sur box, un Hero WOD en hommage à Chad Wilkinson, Navy SEAL. Avec ou sans sac lesté, chacun à son niveau, et on se pousse jusqu'à la dernière rep."
   },
   {
