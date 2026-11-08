@@ -12,6 +12,14 @@
 
 const ARTICLES = [
   {
+    "id": "chad-wilkinson-1000-step-ups",
+    "titre": "Chad : qui était l’homme derrière les 1 000 step-ups",
+    "rubrique": "Communauté",
+    "date": "2026-11-09",
+    "resume": "Mercredi, on fait Chad. Avant de monter 1 000 fois sur une box, voilà qui était Chad Wilkinson, d’où vient ce WOD, et pourquoi il existe.",
+    "url": "articles/chad-wilkinson-1000-step-ups.html"
+  },
+  {
     "id": "tension-mecanique-charge",
     "titre": "Tension mécanique : pourquoi le poids sur la barre ne fait pas tout",
     "rubrique": "Conseils",
