@@ -12,6 +12,14 @@
 
 const ARTICLES = [
   {
+    "id": "tension-mecanique-charge",
+    "titre": "Tension mécanique : pourquoi le poids sur la barre ne fait pas tout",
+    "rubrique": "Conseils",
+    "date": "2026-11-08",
+    "resume": "Pour gagner en force et en muscle, ce qui compte c'est la tension subie par le muscle. Ce que dit la science, ce qui fait débat, et comment on l'applique.",
+    "url": "articles/tension-mecanique-charge.html"
+  },
+  {
     "id": "frequence-cardiaque-repos-montre",
     "titre": "Fréquence cardiaque au repos : ce que ta montre ne te dit pas",
     "rubrique": "Conseils",
